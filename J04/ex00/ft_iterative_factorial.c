@@ -12,19 +12,19 @@
 
 int		ft_iterative_factorial(int nb)
 {
-	int i;
-	int result;
+	int a;
+	int resultat;
 
-	i = 1;
-	result = 1;
+	a = 1;
+	resultat = 1;
 	if (nb < 0 || nb > 12)
 		return (0);
 	if (nb == 0 || nb == 1)
 		return (1);
-	while (i <= nb)
+	while (a <= nb)
 	{
-		result *= i;
-		i++;
+		resultat *= a;
+		a++;
 	}
-	return (result);
+	return (resultat);
 }
