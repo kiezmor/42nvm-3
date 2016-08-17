@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpluchar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/13 17:37:35 by vpluchar          #+#    #+#             */
-/*   Updated: 2016/08/16 19:44:34 by vpluchar         ###   ########.fr       */
+/*   Created: 2016/08/15 07:27:09 by vpluchar          #+#    #+#             */
+/*   Updated: 2016/08/18 00:03:53 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putnbr(int nb)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int		s;
+	int	a;
+	int	b;
 
-	s = 1;
-	if (nb < 0)
+	a = 0;
+	b = 0;
+	if (to_find[0] == '\0')
+		return (str);
+	while (str[b] != '\0')
 	{
-		ft_putchar('-');
-		s = -s;
+		while (str[b + a] == to_find[a])
+		{
+			a++;
+			if (to_find[a] == '\0')
+				return (&str[b]);
+		}
+		b++;
+		a = 0;
 	}
-	if (nb >= 10 || nb <= -10)
-		ft_putnbr(nb / 10 * s);
-	ft_putchar(nb % 10 * s + '0');
+	return (0);
 }

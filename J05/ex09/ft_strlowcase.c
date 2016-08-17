@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpluchar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/13 17:37:35 by vpluchar          #+#    #+#             */
-/*   Updated: 2016/08/16 19:44:34 by vpluchar         ###   ########.fr       */
+/*   Created: 2016/08/17 23:38:36 by vpluchar          #+#    #+#             */
+/*   Updated: 2016/08/17 23:42:05 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putnbr(int nb)
+char	*ft_strlowcase(char *str)
 {
-	int		s;
+	int	v;
 
-	s = 1;
-	if (nb < 0)
+	v = 0;
+	while (str[v] != '\0')
 	{
-		ft_putchar('-');
-		s = -s;
+		if (str[v] >= 'a' && str[v] <= 'z')
+			str[v] += 32;
+		v++;
 	}
-	if (nb >= 10 || nb <= -10)
-		ft_putnbr(nb / 10 * s);
-	ft_putchar(nb % 10 * s + '0');
+	return (str);
 }

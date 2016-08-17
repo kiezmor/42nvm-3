@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpluchar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/13 17:37:35 by vpluchar          #+#    #+#             */
-/*   Updated: 2016/08/16 19:44:34 by vpluchar         ###   ########.fr       */
+/*   Created: 2016/08/17 19:04:37 by vpluchar          #+#    #+#             */
+/*   Updated: 2016/08/17 19:18:04 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putnbr(int nb)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int		s;
+	int	unsigned v;
 
-	s = 1;
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		s = -s;
-	}
-	if (nb >= 10 || nb <= -10)
-		ft_putnbr(nb / 10 * s);
-	ft_putchar(nb % 10 * s + '0');
+	v = 0;
+	while (s1[v] == s2[v] && s1 != '\0' && v < n)
+		v++;
+	return (s1[v] - s2[v]);
 }
