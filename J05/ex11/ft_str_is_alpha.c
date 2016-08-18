@@ -6,25 +6,17 @@
 /*   By: vpluchar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/18 12:32:45 by vpluchar          #+#    #+#             */
-/*   Updated: 2016/08/18 13:34:41 by vpluchar         ###   ########.fr       */
+/*   Updated: 2016/08/18 19:18:08 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_alpha(char *str)
+int ft_str_is_alpha(char *str)
 {
-	int i;
-	int	j;
-
-	i = 0;
-	while (str[i] != '\0')
+	while(*str)
 	{
-		j = i;
-		while (str[i] >= 97 && str[i] <= 122)
-			i++;
-		while (str[i] >= 65 && str[i] <= 90)
-			i++;
-		if (j == i)
+		if(*str < 'A' || (*str > 'Z' && *str < 'a') || *str > 'z')
 			return (0);
+		str++;
 	}
 	return (1);
 }

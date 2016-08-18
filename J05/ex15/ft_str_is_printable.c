@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpluchar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/14 16:06:16 by vpluchar          #+#    #+#             */
-/*   Updated: 2016/08/18 17:19:28 by vpluchar         ###   ########.fr       */
+/*   Created: 2016/08/18 17:21:49 by vpluchar          #+#    #+#             */
+/*   Updated: 2016/08/18 17:35:20 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int		ft_str_is_printable(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (i <= n && src[i] != '\0')
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		while (str[i] < 32)
+			return (0);
 		i++;
 	}
-	while (i <= n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (1);
 }
