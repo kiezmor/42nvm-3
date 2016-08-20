@@ -6,11 +6,11 @@
 /*   By: vpluchar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/18 14:44:01 by vpluchar          #+#    #+#             */
-/*   Updated: 2016/08/18 14:47:20 by vpluchar         ###   ########.fr       */
+/*   Updated: 2016/08/20 18:40:09 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_lowercase(char *str)
+int		ft_str_is_lowercase(char *str)
 {
 	int	i;
 	int	j;

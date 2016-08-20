@@ -6,13 +6,13 @@
 /*   By: vpluchar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/14 16:06:16 by vpluchar          #+#    #+#             */
-/*   Updated: 2016/08/18 17:19:28 by vpluchar         ###   ########.fr       */
+/*   Updated: 2016/08/20 18:32:37 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 	while (i <= n && src[i] != '\0')

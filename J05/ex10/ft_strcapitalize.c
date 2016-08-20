@@ -6,7 +6,7 @@
 /*   By: vpluchar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/18 03:49:45 by vpluchar          #+#    #+#             */
-/*   Updated: 2016/08/18 18:14:38 by vpluchar         ###   ########.fr       */
+/*   Updated: 2016/08/20 18:51:39 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strcapitalize(char *str)
 				str[i + 1] -= 32;
 		}
 		else if (str[i + 1] >= 'A' && str[i + 1] <= 'Z')
-			str[i + 1] -= 32;
+			str[i + 1] += 32;
 		i++;
 	}
 	return (str);

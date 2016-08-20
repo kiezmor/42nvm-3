@@ -6,7 +6,7 @@
 /*   By: vpluchar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/17 23:38:36 by vpluchar          #+#    #+#             */
-/*   Updated: 2016/08/17 23:42:05 by vpluchar         ###   ########.fr       */
+/*   Updated: 2016/08/20 18:37:50 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strlowcase(char *str)
 	v = 0;
 	while (str[v] != '\0')
 	{
-		if (str[v] >= 'a' && str[v] <= 'z')
+		if (str[v] >= 'A' && str[v] <= 'Z')
 			str[v] += 32;
 		v++;
 	}
