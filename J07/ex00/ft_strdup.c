@@ -6,7 +6,7 @@
 /*   By: vpluchar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/20 16:23:27 by vpluchar          #+#    #+#             */
-/*   Updated: 2016/08/23 00:47:45 by vpluchar         ###   ########.fr       */
+/*   Updated: 2016/08/23 22:29:40 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,4 @@ char	*ft_strdup(char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
-}
-
-int		main(void)
-{
-	char	*str;
-
-	str = ft_strdup("je test un truc bidon");
-	printf("test : %s\n", str);
-	return (0);
 }
