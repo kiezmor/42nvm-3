@@ -6,7 +6,7 @@
 /*   By: vpluchar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/24 10:04:53 by vpluchar          #+#    #+#             */
-/*   Updated: 2016/08/24 11:15:07 by vpluchar         ###   ########.fr       */
+/*   Updated: 2016/08/24 12:08:23 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define FT_BOOLEAN_H
 # include <unistd.h>
 # define EVEN(x)		((x % 2) == 0) ? TRUE : FALSE
-# define EVEN_MSG		"I have an even number of arguments\n"
-# define ODD_MSG		"I have an odd number of arguments\n"
+# define EVEN_MSG		"I have an even number of arguments.\n"
+# define ODD_MSG		"I have an odd number of arguments.\n"
 # define SUCCESS		0
 # define TRUE			1
 # define FALSE			0

@@ -6,11 +6,11 @@
 /*   By: vpluchar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/24 11:17:23 by vpluchar          #+#    #+#             */
-/*   Updated: 2016/08/24 11:19:30 by vpluchar         ###   ########.fr       */
+/*   Updated: 2016/08/24 12:10:31 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
-# define ABS(value)			(value < 0) ? (-value) : (value);
+# define ABS(value)			(value < 0) ? -(value) : (value)
 #endif
