@@ -3,48 +3,65 @@
 /*                                                        :::      ::::::::   */
 /*   ft_param_to_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adespond <adespond@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsilberm <tsilberm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/14 22:59:13 by adespond          #+#    #+#             */
-/*   Updated: 2016/08/25 16:26:02 by vpluchar         ###   ########.fr       */
+/*   Created: 2015/07/20 16:06:40 by tsilberm          #+#    #+#             */
+/*   Updated: 2016/08/25 17:09:41 by vpluchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_par.h"
 
-int					ft_strlen(char *str)
+char				*ft_strdup(char *src)
 {
-	int i;
+	int		i;
+	int		src_size;
+	char	*new_str;
 
 	i = 0;
-	while (str[i] != '\0')
+	src_size = 0;
+	while (src[src_size])
+		src_size++;
+	new_str = (char*)malloc(sizeof(*new_str) * (src_size));
+	if (new_str == NULL)
+		return (NULL);
+	while (i < src_size)
+	{
+		new_str[i] = src[i];
 		i++;
-	return (i);
+	}
+	new_str[src_size] = '\0';
+	return (new_str);
 }
 
 struct s_stock_par	*ft_param_to_tab(int ac, char **av)
 {
+	t_stock_par *stock;
 	int			i;
-	int			y;
-	t_stock_par *ret;
+	int			j;
 
 	i = 0;
-	ret = (t_stock_par *)malloc(sizeof(t_stock_par) * (ac + 1));
+	stock = malloc(sizeof(t_stock_par) * (ac + 1));
 	while (i < ac)
 	{
-		ret[i].size_param = ft_strlen(av[i]);
-		ret[i].str = av[i];
-		ret[i].copy = (char *)malloc(sizeof(char) * (ret[i].size_param + 1));
-		y = 0;
-		while (y < ret[i].size_param)
-		{
-			ret[i].copy[y] = av[i][y];
-			y++;
-		}
-		ret[i].copy[y] = '\0';
-		ret[i].tab = ft_split_whitespaces(av[i]);
+		j = 0;
+		while (av[i][j])
+			j++;
+		stock[i].size_param = j;
+		stock[i].str = av[i];
+		stock[i].copy = ft_strdup(av[i]);
+		stock[i].tab = ft_split_whitespaces(av[i]);
 		i++;
 	}
-	ret[i].str = 0;
-	return (ret);
+	stock[i].str = 0;
+	return (stock);
+}
+
+int		main(int argc, char **argv)
+{
+	struct s_stock_par *a;
+	a = ft_param_to_tab(argc, argv);
+
+	ft_show_tab(a);
+	return (0);
 }
